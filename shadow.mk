@@ -155,7 +155,12 @@ PRODUCT_COPY_FILES += \
     device/motorola/shadow/releaseutils/mke2fs:system/etc/releaseutils/mke2fs \
     device/motorola/shadow/releaseutils/tune2fs:system/etc/releaseutils/tune2fs \
     device/motorola/shadow/releaseutils/check_kernel:system/etc/releaseutils/check_kernel \
-    device/motorola/shadow/releaseutils/finalize_release:system/etc/releaseutils/finalize_release
+    device/motorola/shadow/releaseutils/finalize_release:system/etc/releaseutils/finalize_release \
+
+# ALL_PREBUILT is a deprecated method, this copies the postrecoveryboot.sh file instead
+PRODUCT_COPY_FILES += \
+    device/motorola/shadow/postrecoveryboot.sh:$(TARGET_RECOVERY_ROOT_OUT)/sbin/postrecoveryboot.sh
+   
 
 # copy all kernel modules under the "modules" directory to system/lib/modules
 PRODUCT_COPY_FILES += $(shell \
